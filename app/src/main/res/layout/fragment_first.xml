@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:clipToPadding="false"
+    tools:actionBarNavMode="tabs"
+    android:layout_height="match_parent"
+    tools:context="layout.FirstFragment"
+    android:background="@color/colorAccent"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/first_fragment"
+        android:textSize="30dp"/>
+    </RelativeLayout>
+
+</FrameLayout>
