@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_marginTop="?attr/actionBarSize"
-    android:clipToPadding="false"
-    tools:actionBarNavMode="tabs"
     android:layout_height="match_parent"
-    tools:context="layout.FirstFragment"
+    tools:context=".FirstFragment"
     android:background="@color/colorAccent"
     >
 
@@ -18,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/first_fragment"
-        android:textSize="30dp"/>
+        android:text="@string/home"
+        android:textSize="30sp"/>
     </RelativeLayout>
 
 </FrameLayout>

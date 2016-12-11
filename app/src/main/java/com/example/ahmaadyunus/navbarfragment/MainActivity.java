@@ -1,21 +1,21 @@
 package com.example.ahmaadyunus.navbarfragment;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import layout.FirstFragment;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity
         //implements NavigationView.OnNavigationItemSelectedListener
@@ -28,17 +28,20 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Fragment fragment = (Fragment) FirstFragment.newInstance("tes","tes");
+
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.flContent, fragment).commit();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //navigationView.setNavigationItemSelectedListener(this);
         setupDrawerContent(navigationView);
     }
+
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -57,10 +60,13 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_one:
                 fragmentClass = FirstFragment.class;
                 break;
-//            case R.id.nav_two:
-//                fragmentClass = SecondFragment.class;
-//                break;
-//            case R.id.nav_third_fragment:
+           case R.id.nav_two:
+                fragmentClass = SecondFragment.class;
+                break;
+            case R.id.nav_three:
+                fragmentClass = ThirdFragment.class;
+                break;
+//            case R.id.nav_four:
 //                fragmentClass = ThirdFragment.class;
 //                break;
             default:
@@ -75,9 +81,9 @@ public class MainActivity extends AppCompatActivity
         // Insert the fragment by replacing any existing fragment
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
-        // Highlight the selected item has been done by NavigationView
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+          // Highlight the selected item has been done by NavigationView
 
         menuItem.setChecked(true);
         // Set action bar title
@@ -147,4 +153,5 @@ public class MainActivity extends AppCompatActivity
 //        drawer.closeDrawer(GravityCompat.START);
 //        return true;
 //    }
+
 }
