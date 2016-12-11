@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize"
-    android:background="@android:color/holo_blue_bright"
+    android:background="@android:color/white"
     android:padding="20dp"
     tools:context="com.example.ahmaadyunus.navbarfragment.SecondFragment">
 

@@ -16,4 +16,5 @@
     <string name="job">Job   : Android Developer</string>
     <string name="contact">Contact</string>
     <string name="address">Jl. Dr. Setiabudhi No. 329</string>
+    <string name="admin">Admin</string>
 </resources>
